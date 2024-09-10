@@ -19,7 +19,7 @@ Here's a step-by-step breakdown of what I've done so far:
 
 ### Sept 10 Update
 
-Over this week, I enriched the lynch_clusters with geolocation data derived from the Viral Texts' place metadata for newspapers. I also used some Python libraries to build maps of the reprints. The code for these activities can be viewed here: [https://github.com/MatthewKollmer/messing-around/blob/main/vrt_work/say_their_names/geolocate_reprints.ipynb](https://github.com/MatthewKollmer/messing-around/blob/main/vrt_work/say_their_names/geolocate_reprints.ipynb).
+Over this week, I enriched the lynch_clusters with geolocation data derived from the Viral Texts' [place metadata](https://github.com/ViralTexts/newspaper-metadata) for newspapers. I also used some Python libraries to build maps of the reprints. The code for these activities can be viewed here: [https://github.com/MatthewKollmer/messing-around/blob/main/vrt_work/say_their_names/geolocate_reprints.ipynb](https://github.com/MatthewKollmer/messing-around/blob/main/vrt_work/say_their_names/geolocate_reprints.ipynb).
 
 I also explored the data using these interactive maps. This led to an important discovery: there are a large number of false positives in the data (i.e., instances where the victim's name appears, but not in reference to racial violence). I need to review my scraping code and ChronAm's search. I think I'll need to rebuild the dataset with more refinement. I'm thinking of scraping from a more general search with just the victim's name appearing on the page. Then I'll mine the results for instances where city name and other markers of racial violence occur (words like 'lynch', 'posse', 'mob', 'negro', etc.) within a certain range of the victim names.
 
