@@ -24,3 +24,15 @@ Over this week, I enriched the lynch_clusters with geolocation data derived from
 I also explored the data using these interactive maps. This led to an important discovery: there are a large number of false positives in the data (i.e., instances where the victim's name appears, but not in reference to racial violence). I need to review my scraping code and ChronAm's search. I think I'll need to rebuild the dataset with more refinement. I'm thinking of scraping from a more general search with just the victim's name appearing on the page. Then I'll mine the results for instances where city name and other markers of racial violence occur (words like 'lynch', 'posse', 'mob', 'negro', etc.) within a certain range of the victim names.
 
 Anyway that's not a total loss. In rebuilding the dataset, I'll easily be able to expand by some variables we've discussed in meetings, such as the year following the year of incident and victim aliases. Once I've tried to build the dataset with more refinement, I'll rerun these geolocation and mapping scripts, too, and see how things are looking.
+
+### Sept 18 Update
+
+This week I was admittedly more cluttered in my workflow, but here's what I got done:
+- I built a larger dataset based solely on victim names (as opposed to victim names plus city names appearing together). I did this by re-scraping Chronicling America by just victim name in the year of the incident and the year following.
+- I debugged some things. I noticed my fix_names() and newspaper_clippings() functions needed to be improved. Basically, I added spaces before and after any fixed_names() then used nltk to tokenize the data to make newspaper_clippings() more accurate in its clippings.
+- I added new columns to this broader dataset (victim_name, city, state).
+- I added a city_mentioned column with binary logic. If city name is mentioned in the clipping, it is labelled 'yes'.
+- I added a signal_word_count column. It contains counts of predetermined signal words (words that probably indicate racial violence) as they appear in the clippings.
+- Using these last two columns, I've created a subset of the data where city name appears near victim name and/or racial violence words appear near the victim name. This subset contains just over 10,000 hits. It needs to be reviewed, but I anticipate it will have contain fewer false positives of racial violence than the data from my first iteration. This part is the next phase of iteration, too. I'll need to test my thresholds to see where I can identify the most instances with fewest false positives. Not sure how I'll do that yet, but we'll see.
+
+All these steps can be viewed in this messy Jupyter notebook: [https://github.com/MatthewKollmer/messing-around/blob/main/vrt_work/say_their_names/build_refine_dataset.ipynb](https://github.com/MatthewKollmer/messing-around/blob/main/vrt_work/say_their_names/build_refine_dataset.ipynb)
