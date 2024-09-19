@@ -42,3 +42,15 @@ All these steps can be viewed in this messy Jupyter notebook: [https://github.co
 In the last day, I've tried to bring it all together. I've added more columns to the new, refined dataset (columns like 'newspaper' and 'reprint_date'). I also remade the maps with the refined dataset. I also went ahead and created a web page to view the map demo. It is password protected. Contact me if you need the password. But the page can be viewed here: [https://matthewkollmer.com/vrt-say-their-names-demo/](https://matthewkollmer.com/vrt-say-their-names-demo/).
 
 Any changes in my process are reflected in the Jupyter notebooks in this repository now, too. I also uploaded the refined data and the maps to the Box folder here: [https://uofi.app.box.com/folder/283228321987?s=hhekbeupm9sgkh8nb3dbo7ial4xpioud](https://uofi.app.box.com/folder/283228321987?s=hhekbeupm9sgkh8nb3dbo7ial4xpioud)
+
+I think the next thing I need to focus on is testing the accuracy of my racial violence detection. Here's a pseudocode version of how I've narrowed the detection:
+
+Each instance labelled a racial violence report:
+
+- contains the victim's name
+- was printed in the year of the occurrence or the year after
+- either contains the city of the occurrence within 150 words of the victim's name
+  OR
+- three or more signal words (lynch, mob, posse, negro, shot, hang) within 150 words of the victim's name
+
+So, how accurate are these results? I'm not quite sure yet. I'm also not sure how to test their accuracy other than combing through them. I'm certain they're more accurate than my first iteration (described in Sept 3 and Sept 10 updates above), but perhaps I can add more signal words or essentialize the city of occurrence to improve accuracy? Again, not sure. I'll think on this over the next few days.
