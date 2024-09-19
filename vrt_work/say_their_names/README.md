@@ -36,3 +36,9 @@ This week I was admittedly more cluttered in my workflow, but here's what I got 
 - Using these last two columns, I've created a subset of the data where city name appears near victim name and/or racial violence words appear near the victim name. This subset contains just over 10,000 hits. It needs to be reviewed, but I anticipate it will have contain fewer false positives of racial violence than the data from my first iteration. This part is the next phase of iteration, too. I'll need to test my thresholds to see where I can identify the most instances with fewest false positives. Not sure how I'll do that yet, but we'll see.
 
 All these steps can be viewed in this messy Jupyter notebook: [https://github.com/MatthewKollmer/messing-around/blob/main/vrt_work/say_their_names/build_refine_dataset.ipynb](https://github.com/MatthewKollmer/messing-around/blob/main/vrt_work/say_their_names/build_refine_dataset.ipynb)
+
+### Sept 19 Update
+
+In the last day, I've tried to bring it all together. I've added more columns to the new, refined dataset (columns like 'newspaper' and 'reprint_date'). I also remade the maps with the refined dataset. I also went ahead and created a web page to view the map demo. It is password protected. Contact me if you need the password. But the page can be viewed here: [https://matthewkollmer.com/vrt-say-their-names-demo/](https://matthewkollmer.com/vrt-say-their-names-demo/).
+
+Any changes in my process are reflected in the Jupyter notebooks in this repository now, too. I also uploaded the refined data and the maps to the Box folder here: [https://uofi.app.box.com/folder/283228321987?s=hhekbeupm9sgkh8nb3dbo7ial4xpioud](https://uofi.app.box.com/folder/283228321987?s=hhekbeupm9sgkh8nb3dbo7ial4xpioud)
