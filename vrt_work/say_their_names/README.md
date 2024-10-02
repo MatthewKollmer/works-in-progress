@@ -1,8 +1,8 @@
 # About
 
-These contents are the preliminary code and data used to identify racial violence victims in historical newspapers.
+These contents are the preliminary code and data used to identify racial violence victims in historical newspapers. The code is my own, but full disclaimer: I often collaborate with ChatGPT to make corrections if I get errors and I ask it questions about Python libraries I'm not familiar with.
 
-Larger files are not hosted here. They can be found in this Box folder: 
+Also, larger files are not hosted here. They can be found in this Box folder: 
 
 [https://uofi.app.box.com/folder/283228321987?s=hhekbeupm9sgkh8nb3dbo7ial4xpioud](https://uofi.app.box.com/folder/283228321987?s=hhekbeupm9sgkh8nb3dbo7ial4xpioud)
 
@@ -64,3 +64,32 @@ I'm also thinking about building datasets of newspapers from regions where lynch
 Anyway, alongside Avery, I also reviewed the data to see how accurately the clippings are capturing instances of racial violence. I did this in a pseudo-programmatic way. Basically, I built a loop to prompt me to review each row and label the clipping as either totally about racial violence, partially about racial violence, not about racial violence at all, or unknown. This process can be reviewed here: [https://github.com/MatthewKollmer/messing-around/blob/main/vrt_work/say_their_names/case_match_review.ipynb](https://github.com/MatthewKollmer/messing-around/blob/main/vrt_work/say_their_names/case_match_review.ipynb). I looked at 171 rows and four csv files. A little over 90% of them were totally or partially about their respective racial violence events. So, that's encouraging–it means that the refined dataset I've put together probably isn't cluttered with false positives. But we'll see how it went for Avery, too. And of course, we should probably review far more of the data. There are something like 10,000 rows. A couple hundred of them is still a small sample size.
 
 Oh, almost forgot–a large part of my week was also preoccupied with reviewing Chronicling America's interface and API changes, which are set to be implemented at the end of this year... Ugh, this is a bit of a nightmare. Once they change the API, most of my code will be broken. I'm going to need to change my scraping approaches drastically. I'm looking more closely at downloading their batches of files rather than scraping by URL. It's going to be a different process altogether, but nothing to be done about it. Must plan accordingly.
+
+### Oct 1 Update
+
+Updates: I decided to forge ahead on the local/regional newspapers idea–that is, the plan to identify towns where lynchings occurred and where nearby local or regional newspapers are 1)digitized and 2) show coverage around the same timeframe. Toward those ends, I put together this notebook: [https://github.com/MatthewKollmer/messing-around/blob/main/vrt_work/say_their_names/identify_build_lynching_town_datasets.ipynb](https://github.com/MatthewKollmer/messing-around/blob/main/vrt_work/say_their_names/identify_build_lynching_town_datasets.ipynb). Basically, this notebook contains four general steps:
+
+1) finding localities (city, state) in our data where lynchings occurred
+2) Geolocating these lynching towns
+3) identify lynching towns with digitized newspapers
+4) building lynching town subsets
+
+These steps were successful, but I ran into some surprises along the way. Firstly, after reviewing our Black subset of Seguin & Rigby's data, I discovered it contains very few lynchings from the majority of the Southern states?! This surprised me greatly. There are lots of instances from Texas, but not Louisiana, Mississippi, Georgia, Alabama, or Florida. I need to investigate why. I touch on one hypothesis in the notebook (is it because I removed instances without named victims?), but I haven't investigated this anomaly further.
+
+Secondly, I was surprised by how difficult it was to find towns where lynchings occurred and where there was relevant available newspaper data. Now, this part of the process is ongoing, but I had to review by hand the Chron Am map of newspapers ([see here](https://loc.maps.arcgis.com/apps/instant/media/index.html?appid=3c6a392554d545bdb1c083348ef56458&center=-97.5126;39.6376&level=3)) and my own map of lynchings. This process really revealed the limitations of the Chron Am data. As I say in my notebook, "the limitations of Chron Am's data reveals itself here in ways you don't realize looking at the data as rows or lists. [...] the map makes you see the gaps in spaces where surely there were newspapers, but they are not digitized or available." 
+
+Still, I was able to find a few overlapping spaces and cases. I was also able build subsets of these newspapers by scraping Chron Am. Those subsets can be downloaded here: [https://github.com/MatthewKollmer/messing-around/blob/main/vrt_work/say_their_names/lynching_town_newspapers.zip](https://github.com/MatthewKollmer/messing-around/blob/main/vrt_work/say_their_names/lynching_town_newspapers.zip). They are:
+
+Newspaper: Peninsula Enterprise, Acconomac, VA 
+Page: https://chroniclingamerica.loc.gov/lccn/sn94060041/ 
+Incident: Magruder Fletcher, Tasley, VA
+
+Newspaper: Maryland Independent, La Plata, MD 
+Page: https://chroniclingamerica.loc.gov/lccn/sn85025407/ 
+Incident: Joseph Cocking, Port Tobacco, MD
+
+Newspaper: Lexington Intelligencer, Lexington, MO 
+Page: https://chroniclingamerica.loc.gov/lccn/sn86063623/ 
+Incident: Harry Gates, Lexington, MO
+
+Now, what to do with these newspaper subsets... I'll begin by reading them. And seeing if they mention anything related to their respective cases. That's what's on the docket for the next few days.
