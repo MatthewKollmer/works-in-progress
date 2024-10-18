@@ -103,3 +103,11 @@ Part of my delay in that regard is the tendril with the largest potential: the a
 Anyway, this is a tendril with a lot of potential because the Tolnay-Beck Inventory contains about 3,500 more victims relevant to this project. That's ten times as many as the Seguin/Rigby data... I've done some first steps in preparing this data for the scraping process (see [tolnay_beck_additions.ipynb](https://github.com/MatthewKollmer/messing-around/blob/main/vrt_work/say_their_names/tolnay_beck_additions.ipynb)). However, it's gonna take some more planning before I scrape all those results. For reference, scraping Chron Am for the Seguin/Rigby data took about nine hours of runtime. If I have to scrape ten times that amount, it'll take about 90 hours. If possible, I'd like to find a workaround. Otherwise, I'll have to scrape the results in batches over the course of a couple weeks.
 
 We'll see. Tomorrow's meeting will hopefully give me more insight. But for the rest of this week, I'll prepare for a presentation on this project in the Data Cultures Lab (an informal DH lab at UIUC). I'll also see if I can finish the lynching town paper identification pipeline. Lots to do! Tendrils, I say. There's also reviewing the results more thoroughly, improving the signal word lists/lexicon, and other stuff. I think this Friday's presentation will be a good opportunity to get all these things in order.
+
+### Oct 17 Update
+
+Tomorrow I have the presentation for the Data Cultures Lab. As part of my preparation, I put together this flowchart:
+
+![Flowchart for DCL Presentation](https://github.com/MatthewKollmer/messing-around/raw/main/vrt_work/say_their_names/dcl_presentation/vrt_flowchart_dcl_presentation.png)
+
+It attempts to describe the entire process thus far. It only omits things I haven't yet added to this repository. You can also go to [this page](https://www.blocksandarrows.com/editor/lISQXJVO6hjT25OB) if you want to interact with the flowchart.
