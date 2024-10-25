@@ -111,3 +111,37 @@ Tomorrow I have the presentation for the Data Cultures Lab. As part of my prepar
 ![Flowchart for DCL Presentation](https://github.com/MatthewKollmer/messing-around/raw/main/vrt_work/say_their_names/dcl_presentation/vrt_flowchart_dcl_presentation.png)
 
 It attempts to describe the entire process thus far. It only omits things I haven't yet added to this repository. You can also go to [this page](https://www.blocksandarrows.com/editor/lISQXJVO6hjT25OB) if you want to interact with the flowchart.
+
+### Oct 25 Update
+
+I guess I should start by mentioning that the DCL presentation went well! I got some good feedback and suggestions on those dangling research questions in my flowchart. The flowchart also proved to be an effective way to describe what I'm doing. I'll come back to it eventually with updates and so forth. Maybe every couple months, I'll try to translate these journal entries into an updated flowchart.
+
+Anyway, I tried to tackle two things this week:
+
+1) Figuring out how to pull Chron Am data for the Tolnay-Beck Inventory without running my computer for 90+ hours; and,
+2) Creating a pipeline for identifying newspapers with digitized content near the locations of lynchings AND over the same timeframe.
+
+On the first task, I've gotten in touch with Dr. Smith at Northeastern. He suggested using the Discovery Cluster/remote server there. It has all the Chron Am data locally. I need to get sponsored access to use this resource at Northeastern, though, so we're filling out the necessary forms. Once approved, I'm hoping he and I can meet to discuss how to use the remote server efficiently. I've done it before, but not with much success... I'm not a command line kinda person. But we'll see, with a little guidance I think I can get it done. Then we'll have the Tolnay-Beck Inventory and any related search results as part of our data.
+
+On the second task, I've had more tangible progress. Here's what I did to identify lynching town newspapers computationally:
+
+I cross-referenced of four datasets:
+- Our Seguin & Rigby subset of black victims: [https://github.com/MatthewKollmer/messing-around/blob/main/vrt_work/say_their_names/seguin_rigby_data_black_subset_02.csv](https://github.com/MatthewKollmer/messing-around/blob/main/vrt_work/say_their_names/seguin_rigby_data_black_subset_02.csv)
+- DBpedia's place metadata: [https://github.com/ViralTexts/newspaper-metadata/blob/main/places.csv](https://github.com/ViralTexts/newspaper-metadata/blob/main/places.csv)
+- Viral Texts' dbpedia metadata for newspapers: [https://raw.githubusercontent.com/ViralTexts/newspaper-metadata/refs/heads/main/series.csv](https://raw.githubusercontent.com/ViralTexts/newspaper-metadata/refs/heads/main/series.csv)
+- Chronicling America's digitized newspaper data: [https://chroniclingamerica.loc.gov/newspapers.txt](https://chroniclingamerica.loc.gov/newspapers.txt)
+
+Using these datasets, I did the following:
+
+1) I cross-referenced VT's dbpedia data with Chron Am's digitized newspaper data. Where there were matches, I added the dbpedia link for location to the digitized newspaper data.
+2) I cross-referenced these dbpedia links to the dbpedia places metadata. Where there were matches, I added the dbpedia latitude and longitude data. This gave me the lat/long for each digitized newspaper.
+3) After lots of Googling and inquiring with ChatGPT, I focused on what's called the Haversine formula for getting distances between newspaper locations and lynching town locations. This formula calculates the distances between points on a sphere. I'm not an expert on it or anything, but basically this formula calculates the angle between two points and the center of the sphere. Then it multiplies the angle by the size of the sphere to get the distance over the curved surface between the two points. After reading about this method, I adapted code from this Stack Overflow thread: [https://stackoverflow.com/questions/4913349/haversine-formula-in-python-bearing-and-distance-between-two-gps-points](https://stackoverflow.com/questions/4913349/haversine-formula-in-python-bearing-and-distance-between-two-gps-points). This resulted in the function haversine_calculation().
+4) Using this function, I iterated over the lats/longs in my newspapers dataframe (the one enriched with location data through the processes in steps 1 and 2) and I iterated over the lats/longs in our Seguin & Rigby Black victim subset. If their locations were within 10 miles of each other, I considered them matches. This 10 mile threshold is just off vibes. It should probably be adjusted based on any information we have about the distance of newspaper circulation and more refined definitions of 'local'. But if there were any matches within 10 miles of each other, I combined the rows in a new dataset called 'nearby_papers_cases'. This resulted in 745 newspapers within 10 miles of where lynching occurred.
+5) I still needed to deduce whether these newspapers had digitized pages within the same timeframe as the lynching, though. To do that, I iterated over the First Issue Date and Last Issue Date columns, checking to see if the corresponding lynching date landed within those timeframes. After doing this, I was able to identify about 25 lynching cases that have local papers with digitized coverage.
+6) I then mapped the results so it's easier to review them.
+
+There are lots of little processing steps in between these things, but I'm trying to be as clear as possible where it matters. For the full breakdown of these steps in code, you can view this notebook: [https://github.com/MatthewKollmer/messing-around/blob/main/vrt_work/say_their_names/identifying_lynch_town_papers_pipeline.ipynb](https://github.com/MatthewKollmer/messing-around/blob/main/vrt_work/say_their_names/identifying_lynch_town_papers_pipeline.ipynb)
+
+And here's the mapped results:
+
+![lynching town map](https://matthewkollmer.com/lynch_town_paper_map.html)
