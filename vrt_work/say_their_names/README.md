@@ -142,6 +142,7 @@ Using these datasets, I did the following:
 
 There are lots of little processing steps in between these things, but I'm trying to be as clear as possible where it matters. For the full breakdown of these steps in code, you can view this notebook: [https://github.com/MatthewKollmer/messing-around/blob/main/vrt_work/say_their_names/identifying_lynch_town_papers_pipeline.ipynb](https://github.com/MatthewKollmer/messing-around/blob/main/vrt_work/say_their_names/identifying_lynch_town_papers_pipeline.ipynb)
 
-And here's the mapped results:
+To view the mapped results, visit this page: [https://matthewkollmer.com/lynch_town_paper_map.html](https://matthewkollmer.com/lynch_town_paper_map.html)
 
-<iframe src="https://matthewkollmer.com/lynch_town_paper_map.html" width="100%" height="600"></iframe>
+The red dots are the town locations for lynchings. The black circles are the ten mile radii around local papers. When you hover over either dots or circles, you'll get more information about them, including date, victim, nearest newspaper, etc. 
+
