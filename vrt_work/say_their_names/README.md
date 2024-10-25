@@ -144,4 +144,4 @@ There are lots of little processing steps in between these things, but I'm tryin
 
 And here's the mapped results:
 
-![lynching town map](https://matthewkollmer.com/lynch_town_paper_map.html)
+[lynching town map](https://matthewkollmer.com/lynch_town_paper_map.html)
