@@ -191,3 +191,8 @@ Anyway, that's one major hurdle for the project complete. I've also been working
 In this new repository, you may notice I've gone ahead and started scraping the results from Chronicling America. Yes, it's true. I'm still working on getting the NEU remote server configured, but in the interim, I've chunked the search results and I'm slowly scraping Chron Am. I'm over halfway done already. This will result in a dataset of about 450,000 search hits. Once complete, I'll take code from the notebooks in this repository to refine the data, essentially repeating my steps with minor alterations to create a dataset of victim references with far fewer false positives. So, that's a solid development.
 
 And that's pretty much everything I've been up to over the past few weeks. There's only one week left in the semester now, but I'll try to post again at least once before we take off.
+
+
+### Dec 19 Update
+
+Here is a link to the Chron Am raw search results data for victims in both Seguin & Rigby and Tolnay-Beck: [https://uofi.box.com/s/dqf9ac3in29hfz0gbrbleqzvkv13w2hs](https://uofi.box.com/s/dqf9ac3in29hfz0gbrbleqzvkv13w2hs)
