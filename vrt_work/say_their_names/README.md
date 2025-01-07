@@ -196,3 +196,15 @@ And that's pretty much everything I've been up to over the past few weeks. There
 ### Dec 19 Update
 
 Here is a link to the Chron Am raw search results data for victims in both Seguin & Rigby and Tolnay-Beck: [https://uofi.box.com/s/dqf9ac3in29hfz0gbrbleqzvkv13w2hs](https://uofi.box.com/s/dqf9ac3in29hfz0gbrbleqzvkv13w2hs)
+
+Post-script on Jan 7:
+
+Oops! Forgot to provide more context on Dec 19th. I was in a hurry, trying to finish up for the semester. But good news: on December 19th I finished scraping Chron Am for all victim names from Seguin & Rigby and Tolnay-Beck. The link above takes you to the unfiltered data from the scraped search results. It's a zip file called chron_am_search_hits.zip. It contains 3,994 csv files, one per victim, broken into 96 chunks to make the scraping more manageable. In total, it's 453,050 pages of digitized newspaper text!
+
+### Jan 7 Update
+
+Just a little progress report. I've been doing things over break when I've been free and motivated. I added [03_scrape_search_results.ipynb](https://github.com/MatthewKollmer/say_their_names/blob/main/03_scrape_search_results.ipynb) to my polished Say Their Names repository. It shows how I took the large scraping task and broke it into manageable chunks in order to build the new dataset of search hits. Since then, I've been working on 04_preprocess_pages.ipynb. It will contain all the steps I'm taking to filter the search results for instances of racial violence. I'll push this notebook in the coming weeks, too, but it's taking a while because I'm trying to optimize everything in this iteration.
+
+That optimization has been focused on my fix_names() function to start. It's a tedious little step, but I'm finding it to be hugely important. The thing is, I've looked at enough of the data to know that Chron Am uses a fuzzy match search. This means it identifies not just pages with the exact word or phrase from the search, but rather all pages with words or phrases that are similar based on certain parameters (no doubt to account for OCR errors). But in turn, this means that lots of the 453,050 scraped pages contain search hits that are just a little off, making further steps, like getting clippings, more difficult. In my first iterations, I wrote a fairly simple fix_names() function, but this time, I've worked harder at it, and come up with this version: [fix_names_demo.ipynb](https://github.com/MatthewKollmer/messing-around/blob/main/vrt_work/say_their_names/fix_names_demo.ipynb). That demo notebook explains it with some examples in code. I'm satisfied with it now. I think it will improve the final dataset by a large margin.
+
+Next up is optimizing the clippings and the signal words. The clippings should be easy, the signal words not so much. More soon–
