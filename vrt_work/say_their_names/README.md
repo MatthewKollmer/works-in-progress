@@ -208,3 +208,9 @@ Just a little progress report. I've been doing things over break when I've been 
 That optimization has been focused on my fix_names() function to start. It's a tedious little step, but I'm finding it to be hugely important. The thing is, I've looked at enough of the data to know that Chron Am uses a fuzzy match search. This means it identifies not just pages with the exact word or phrase from the search, but rather all pages with words or phrases that are similar based on certain parameters (no doubt to account for OCR errors). But in turn, this means that lots of the 453,050 scraped pages contain search hits that are just a little off, making further steps, like getting clippings, more difficult. In my first iterations, I wrote a fairly simple fix_names() function, but this time, I've worked harder at it, and come up with this version: [fix_names_demo.ipynb](https://github.com/MatthewKollmer/messing-around/blob/main/vrt_work/say_their_names/fix_names_demo.ipynb). That demo notebook explains it with some examples in code. I'm satisfied with it now. I think it will improve the final dataset by a large margin.
 
 Next up is optimizing the clippings and the signal words. The clippings should be easy, the signal words not so much. More soon–
+
+### Jan 29 Update
+
+Lot's to update, but it's 9:20pm right now, and I am tired, so I'm keeping it brief. I've been successful in preprocessing the 453,050 scraped pages. I've corrected some OCR errors, extracted clippings, counted violence signal words, and counted race signal words. This improved dataset can be downloaded from this Box folder: [https://uofi.app.box.com/folder/305076534062](https://uofi.app.box.com/folder/305076534062).
+
+I'll try to write more tomorrow!
