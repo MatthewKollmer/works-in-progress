@@ -228,7 +228,7 @@ I'm satisfied with it, for sure. At every part–fixing names with OCR errors, g
 
 Now I've got to pair some of this data with specific cases, as we discussed in the last VRT meeting. I'll be working on that for the next 24 hours. I also plan to review a subset of this data and create a training set for classification. I've got ideas there, but before starting, I'll run it by the group tomorrow and see what people think.
 
-Data relevant to known cases:
+#### Data relevant to known cases:
 
 - 1873 Colfax Massacre ([see Wikipedia](https://en.wikipedia.org/wiki/Colfax_massacre), [Colfax Memorial](https://www.colfaxmemorial.org/)). In our data, reports related to the death of Alexander Tillman seem to be related (see [alexander_tillman.csv](https://uofi.app.box.com/file/1763423914859)).
   
