@@ -214,3 +214,16 @@ Next up is optimizing the clippings and the signal words. The clippings should b
 Lot's to update, but it's 9:20pm right now, and I am tired, so I'm keeping it brief. I've been successful in preprocessing the 453,050 scraped pages. I've corrected some OCR errors, extracted clippings, counted violence signal words, and counted race signal words. This improved dataset can be downloaded from this Box folder: [https://uofi.app.box.com/folder/305076534062](https://uofi.app.box.com/folder/305076534062).
 
 I'll try to write more tomorrow!
+
+### Jan 30 Update
+
+As promised, I'm elaborating on my progress over the past two weeks. In that time, I've been working extensively on several NLP preprocessing steps. These steps enrich the data as outlined briefly in yesterday's entry. Code for these steps can be viewed here: [https://github.com/MatthewKollmer/say_their_names/blob/main/04_enrich_dataset.ipynb](https://github.com/MatthewKollmer/say_their_names/blob/main/04_enrich_dataset.ipynb). This notebook does the following:
+
+- reorganizes the directory (removing subdirectory chunks)
+- fixes some OCR issues to identify more references to victims
+- creates 'clippings' of the text around references to victims
+- counts signal words (i.e., words related to violence and race) that appear near the victim's name
+
+I'm satisfied with it, for sure. At every part–fixing names with OCR errors, getting clippings, counting signal words–I've essentially refined the whole process. I'm confident it has improved our dataset. It may not seem very different from previous iterations of the data curation process, but I think it's made everything more robust, so that's good.
+
+Now I've got to pair some of this data with specific cases, as we discussed in the last VRT meeting. I'll be working on that for the next 24 hours. I also plan to review a subset of this data and create a training set for classification. I've got ideas there, but before starting, I'll run it by the group tomorrow and see what people think.
