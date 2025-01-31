@@ -1,6 +1,8 @@
 # About
 
-These contents are the preliminary code and data used to identify racial violence victims in historical newspapers. The code is my own, but full disclaimer: I often collaborate with ChatGPT to make corrections if I get errors and I ask it questions about Python libraries I'm not familiar with.
+These contents are the preliminary code and data used to identify racial violence victims in historical newspapers. Below is a process journal as well. I update this journal regularly. Initially, it was just to help me keep track of tasks and the overall process, but it's turned into a broader resource. It has helped collaborators understand what I'm doing, and it showcases _process_ in DH/cultural analytics work more broadly. It is not polished academic writing or anything. But feel free to read along to see how the Say Their Names Project (a subproject of the larger Virality of Racial Terror Project) is going.
+
+Also, full disclaimer: I often collaborate with ChatGPT to make corrections to code if I get errors and I ask it questions about Python libraries I'm not familiar with.
 
 Also, larger files are not hosted here. They can be found in this Box folder: 
 
