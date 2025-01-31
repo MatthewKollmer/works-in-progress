@@ -1,5 +1,5 @@
 # messing-around
-where I put temporary stuff, incomplete stuff, stuff to share on a whim with folks, test data and scripts. 
+where I put temporary stuff, incomplete stuff, works in progress, stuff to share on a whim with folks, test data and scripts.
 
 Rough drafts and whimsies.
 
