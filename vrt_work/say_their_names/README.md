@@ -240,4 +240,19 @@ I won't hyperlink to every one of those files here, but they can be searched for
 
 - the Click Mitchell case may be worth investigating: [https://uofi.app.box.com/file/1763432104464](https://uofi.app.box.com/file/1763432104464). Occurred in Urbana, Ohio, 1897. There are a lot of printings about it, seems to have been a widely reported event. It also seems to have resulted in some anti-lynching legislation. This I have gathered from reading the reports in the data.
   
-- I keep returning to the Aaron Thomas case: [https://uofi.app.box.com/file/1763432104464](https://uofi.app.box.com/file/1763432104464). Trigger warning on this one, though. It was widely reported (in brutal detail). The case involves the lynching of the Thomas family. Aaron Thomas was just a child. It may be worthwhile to look at the political leanings of the newspapers in this case. Are they including the details to highlight the horrid nature of lynching? Or are they publishing the gruesome details merely to intrigue? I don't really know. 
+- I keep returning to the Aaron Thomas case: [https://uofi.app.box.com/file/1763432104464](https://uofi.app.box.com/file/1763432104464). Trigger warning on this one, though. It was widely reported (in brutal detail). The case involves the lynching of the Thomas family. Aaron Thomas was just a child. It may be worthwhile to look at the political leanings of the newspapers in this case. Are they including the details to highlight the horrid nature of lynching? Or are they publishing the gruesome details merely to intrigue? I don't really know.
+
+### Feb 4 Update
+
+All right, I think I've devised a plan to create a training dataset in order to fine-tune BERT to classify our newspaper clippings as related to lynchings or not.
+
+Here's the big idea:
+
+1) First I created a random sample of 1,000 newspaper clippings (see [05_random_sample.ipynb](https://github.com/MatthewKollmer/say_their_names/blob/main/05_random_sample.ipynb))
+2) Then I created ten separate Google Colab notebooks to divvy up the labelling work (see [VRT labelling notebooks](https://drive.google.com/drive/folders/1pzUHEMj8bZCEDgbt6m3L648ck7f8Kbtv))*
+3) Now I'll just need to run each one of those notebooks to label the data.
+4) Once complete, I'll use this training data to fine-tune BERT
+
+Step number 2 needs further explanation.* So, basically, these Colab notebooks each handle 100 clippings. That's admittedly a lot to do in one sitting, but based on my prior work in [case_match_review.ipynb](https://github.com/MatthewKollmer/messing-around/blob/main/vrt_work/say_their_names/case_match_review.ipynb), I don't think it will be unreasonable. I imagine each one to take maybe an hour or so. How it works is that each notebook prompts the reviewer to classify clippings one-by-one. The classification options are 'yes' (it is entirely about a lynching), 'no' (it is not about a lynching), 'partial' (some of it's about lynching, but not all), or 'unknown' (it's in a language I do not understand and/or the OCR is so bad it can't be read). Once the reviewer finishes, they just need to run the last bit of code to save their labels as a .csv file, and then email this .csv file to me. From there, I'll concatenate these labels and turn them back into one file.
+
+Of course, I'm planning to do a lot of this labelling myself, but in the last meeting it seemed like I would get some help, so I hope this system works for folks. We shall see. I'll pitch it to the group on Friday. In the interim, I'm going to work on the code for fine-tuning and running BERT.
