@@ -41,7 +41,7 @@ All these steps can be viewed in this messy Jupyter notebook: [https://github.co
 
 ### Sept 19 Update
 
-In the last day, I've tried to bring it all together. I've added more columns to the new, refined dataset (columns for 'newspaper' and 'reprint_date'). I also remade the maps with the refined dataset. I also went ahead and created a web page to view the map demo. It is password protected. Contact me if you need the password. But the page can be viewed here: [https://matthewkollmer.com/vrt-say-their-names-demo/](https://matthewkollmer.com/vrt-say-their-names-demo/).
+In the last day, I've tried to bring it all together. I've added more columns to the new, refined dataset (columns for 'newspaper' and 'reprint_date'). I also remade the maps with the refined dataset. I also went ahead and created a web page to view the map demo. It is password protected. Contact me if you need the password. But the page can be viewed here: [https://matthewkollmer.com/vrt-us-lynching-victims-demo/](https://matthewkollmer.com/vrt-us-lynching-victims-demo/).
 
 Any changes in my process are reflected in the Jupyter notebooks in this repository now, too. I also uploaded the refined data and the maps to the Box folder here: [https://uofi.app.box.com/folder/283228321987?s=hhekbeupm9sgkh8nb3dbo7ial4xpioud](https://uofi.app.box.com/folder/283228321987?s=hhekbeupm9sgkh8nb3dbo7ial4xpioud)
 
