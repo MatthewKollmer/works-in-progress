@@ -273,3 +273,21 @@ That's a good amount, but what to do with the other ~390,000 pages we've scraped
 3) So far, I haven't tried to analyze the roughly 96,000 scraped pages that do not have clippings (i.e., those pages where my fix_names() function does not correct the fuzzy-matched hits, and so they don't have victim names spelled correctly). Perhaps more reports of lynchings could be found there, if I can hone my fix_names() function even further.
 
 That's what I've been thinking about this week. I'm eager to finish our training data, though, and to use it to classify the rest of the clippings. If it works, I think we're at the point where we can move ahead to pure data analysis (as opposed to data curation). That'll be cool. Also, coincidentally, this week I re-read Bamman et al.'s ["On Classification with Large Language Models in Cultural Analytics"](https://arxiv.org/pdf/2410.12029) and it proved helpful in thinking about our classication task. When I write up an article about building this dataset, I'll have to explain how our use of BERT and supervised modeling fits into the common "search" & "replacing human labelling at scale" purposes of classification in cultural analytics. Our work here is also an example of classifying novel categories, making supervised modeling the better approach than using LLMs with zero-shot or few-shot prompting.
+
+### March 4 Update
+
+I forgot to update last week. Whoops! I'll just report progress quickly and lay out what I think I'll have done by the end of this week.
+
+If you've been reading along, you'll know that I've been trying to get a firm grip on classification to streamline our labelling of all these victim name clusters. Last week showed progress in that regard, but also challenges. Using the training data that Abraham, Amanda, and I labelled, I tried classifying with TfidF and logistic regression, BOW and logistic regression, and BERT. Of these attempts, TfidF and BOW were especially inaccurate. On identifying clippings with reference to lynchings, TfidF had F1 scores of .31 and .07 on 'yes' and 'partial' labels, respectively. BoW was slightly better, but still horrible. BERT did the best but still only had F1 scores around .7 with especially poor recall on the 'yes' and 'partial' labels.
+
+In last Friday's meeting, I asked Cordell and Blankenship about how to make adjustments. One suggestion was to turn it into a binary classification problem ('yes' for any reference to lynchings and 'no' for no reference to lynchings) as opposed to a four category labelling question. I tried that over the weekend, and good news: it improved results! As a binary classification, BERT improved to .87 recall and F1. That's approaching where I'd like to be. The goal is to be better than signal word labelling, which, when Blankenship and I first hand-reviewed it, resulted in roughly 90% accuracy.
+
+On that note, I also looked closer at signal word labelling and found that 'yes' and 'partial' labels had a median of about 4 violence word signals and 1 racist word signals whereas 'no' and 'unknown' had medians of 0. So, there's definitely something there to that method. But if I can get BERT to be better at this classification problem, I think I'd rather use that so we're not so limited by our signals.
+
+So, how to get BERT above the 90% threshold? That's the problem for this week. Here's what I'm gonna try:
+
+- down-sampling 'no' labels (another Cordell & Blankenship suggestion)
+- increasing the size of the training dataset (more hand-labelling)
+- spending more time reading about BERT's variables (text length, number of epochs, etc.) and testing results with variable changes
+
+I hope to report back with some demonstrable code soon!
