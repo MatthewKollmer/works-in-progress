@@ -291,3 +291,9 @@ So, how to get BERT above the 90% threshold? That's the problem for this week. H
 - spending more time reading about BERT's variables (text length, number of epochs, etc.) and testing results with variable changes
 
 I hope to report back with some demonstrable code soon!
+
+### March 13 Update
+
+I have officially finished the classification task. Hooray! It's 9pm right now, and I am tired, so I'm gonna keep this short. But basically, I expanded the training data, turned the classification task into a simple yes/no binary, fine-tuned BERT three separate times and compared results from each time to determine final classifications. This whole process can be viewed here: [https://github.com/MatthewKollmer/us_lynching_victims/blob/main/07_BERT_classifier.ipynb](https://github.com/MatthewKollmer/us_lynching_victims/blob/main/07_BERT_classifier.ipynb)
+
+Lot's more I could say, but I'll save it for tomorrow's meeting and other journal entries down the line. In sum, though: I'm happy with the outcomes and I feel good about the whole process. I think it's sound.
