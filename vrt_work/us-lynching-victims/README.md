@@ -6,7 +6,7 @@ Also, full disclaimer: I often collaborate with ChatGPT to make corrections to c
 
 Also, larger files are not hosted here. They can be found in this Box folder: 
 
-[https://uofi.app.box.com/folder/283228321987?s=hhekbeupm9sgkh8nb3dbo7ial4xpioud](https://uofi.app.box.com/folder/283228321987?s=hhekbeupm9sgkh8nb3dbo7ial4xpioud)
+[https://uofi.app.box.com/folder/311999767132](https://uofi.app.box.com/folder/311999767132)
 
 If you don't have access via this link, please [contact me](https://matthewkollmer.com/contact/). It just means I need to approve your email to get Box access.
 
@@ -297,3 +297,9 @@ I hope to report back with some demonstrable code soon!
 I have officially finished the classification task. Hooray! It's 9pm right now, and I am tired, so I'm gonna keep this short. But basically, I expanded the training data, turned the classification task into a simple yes/no binary, fine-tuned BERT three separate times and compared results from each time to determine final classifications. This whole process can be viewed here: [https://github.com/MatthewKollmer/us_lynching_victims/blob/main/07_BERT_classifier.ipynb](https://github.com/MatthewKollmer/us_lynching_victims/blob/main/07_BERT_classifier.ipynb)
 
 Lot's more I could say, but I'll save it for tomorrow's meeting and other journal entries down the line. In sum, though: I'm happy with the outcomes and I feel good about the whole process. I think it's sound.
+
+### March 16 Update
+
+I think I've finished curating this dataset. Lots to write up, but it's Spring Break, so I'm saving it for later. Just please know that today I am happy with my work. I've created a dataset representing nearly 4,000 lynching victims. It contains over 300,000 newspaper clippings filtered to include the probability of a reference to a lynching (over 60,000 of the clippings are highly likely to be about lynchings). The data also has lynching location, reprint location, dates, race and gender information, all sorts of stuff. All this can be viewed in the csv files stored here: [https://uofi.app.box.com/folder/311999767132](https://uofi.app.box.com/folder/311999767132).
+
+After break, I'll do a more comprehensive description of the dataset, once and for all. Just wanted to record my satisfaction today. This was a lot of work!
