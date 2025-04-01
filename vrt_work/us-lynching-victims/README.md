@@ -303,3 +303,41 @@ Lot's more I could say, but I'll save it for tomorrow's meeting and other journa
 I think I've finished curating this dataset. Lots to write up, but it's Spring Break, so I'm saving it for later. Just please know that today I am happy with my work. I've created a dataset representing nearly 4,000 lynching victims. It contains over 300,000 newspaper clippings filtered to include the probability of a reference to a lynching (over 60,000 of the clippings are highly likely to be about lynchings). The data also has lynching location, reprint location, dates, race and gender information, all sorts of stuff. All this can be viewed in the csv files stored here: [https://uofi.app.box.com/folder/311999767132](https://uofi.app.box.com/folder/311999767132).
 
 After break, I'll do a more comprehensive description of the dataset, once and for all. Just wanted to record my satisfaction today. This was a lot of work!
+
+### March 31 Update
+
+Almost forgot to post another update. Per my previous post on March 16, I believe the dataset is "complete" in that it's at a point where I could present it and/or use it for further research. I'll try not to describe it by the numbers right now. That can be ineffectual to really understand what the data could be used for. However, I should at least note that we have about 3,000 Black victims represented in the data. We have about 900 white victims. We probably have 60,000 to 90,000 clippings that contain references to lynchings. It's a good-sized dataset.
+
+I've enriched the data with location information and newspaper metadata. For the full series of steps with code, check out [https://github.com/MatthewKollmer/us_lynching_victims/blob/main/08_enrich_dataset_x2.ipynb](https://github.com/MatthewKollmer/us_lynching_victims/blob/main/08_enrich_dataset_x2.ipynb). For each csv file (one per victim), we now have the following columns:
+
+- victim (victim's name)
+- race (Black or white)
+- gender (if known)
+- lynch_date (specified to either the day or the month)
+- lynch_location (town/city, county/parish, and state, if known)
+- lynch_latitude (based on lynch_location)
+- lynch_longitude (based on lynch_location)
+- newspaper (title of newspaper)
+- reprint_date (date of specified page)
+- reprint_longitude (based on newspaper location)
+- reprint_latitude (based on newspaper location)
+- clippings (50 words before victim name and the 100 words after victim name)
+- text (the full OCR text of the given page)
+- probability (our likelihood that the clipping contains reference to a lynching, labelled as either 'high', 'medium', 'low', 'unlikely', or 'unknown')
+- BERT_1 (first round of BERT classification, either 'yes' or 'no')
+- BERT_2 (second round of BERT classification, either 'yes' or 'no')
+- BERT_3 (third round of BERT classification, either 'yes' or 'no')
+- violence_word_count (the number of times words from our violence word lexicon appear in the clipping)
+- racist_word_count (the number of times words from our racist word lexicon appear in the clipping)
+- page_details (newspaper title, city, state, issue, and page number taken from our Chron Am search results)
+- url (the Chron Am URL to the given page)
+- sn_code (Chron Am's newspaper code for the given newspaper)
+- coverage (the dbpedia url used to cross-reference newspaper locations)
+
+In Friday's meeting, we discussed how to use this data for Abe and Amanda's research. They've been essentially using it as an archive of newspapers to research individual cases. In that regard, it's essentially a more streamlined, manageable chunk of Chron Am. I think it could get even more streamlined, though, depending on how we choose to present the data. I've been reading about building interactive dashboards, for example, and using a cloud service to make things more easily retrievable. That way, I could provide the maps as I had done previously and allow users to select subsets of the data for review (i.e., only clippings with a 'high' probability or only victim cases from particular states or regions). 
+
+I suppose that's another possible route forward, but I'm also thinking it's time to draft a scholarly article presenting this dataset and/or describing how it was constructed. I'll need to talk to Dr. Cordell about appropriate journals or other outlets for such a thing. This paper may be entirely descriptive in nature, but perhaps I should also flesh out some demonstrative experiments to show how the data can be used for larger analyses. Time to move from curation to analysis, basically.
+
+What else? A codebook, we need a codebook. My journaling and GitHub should be linked to it, but I think quick descriptions of each column are necessary. This codebook would be tailored for other researchers who just need to quickly reference things like what 'probability' or 'clippings' really mean in our data.
+
+I'll keep thinking about next steps. Definitely feels like a milestone where I have momentum, but also need to reflect on how to best use my time and effort in the next phase.
