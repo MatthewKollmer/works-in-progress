@@ -341,3 +341,13 @@ I suppose that's another possible route forward, but I'm also thinking it's time
 What else? A codebook, we need a codebook. My journaling and GitHub should be linked to it, but I think quick descriptions of each column are necessary. This codebook would be tailored for other researchers who just need to quickly reference things like what 'probability' or 'clippings' really mean in our data.
 
 I'll keep thinking about next steps. Definitely feels like a milestone where I have momentum, but also need to reflect on how to best use my time and effort in the next phase.
+
+### April 17 Update
+
+I'm posting what I think may be one of my last updates here. I just finished and posted the interactive codebook for our dataset. It can be viewed here: [https://matthewkollmer.com/09_interactive_codebook.html](https://matthewkollmer.com/09_interactive_codebook.html). This document contains written descriptions of the columns in our data, summary statistics, visualizations, and interactive maps–all of which is meant to provide cursory explanations of the data. Using this document, other researchers should be able to get a general understanding of what the data contains and what they could do with it.
+
+In the past week, I also met with Dan Evans, fellow PhD student, who lent his insight into data hosting and building digital exhibits. I think I know what to do now. I'm looking at hosting the data via Digital Ocean and building exhibits with Flask. There's a lot to learn in that regard, but Dan set me on the right path. In the next few weeks, that should be well underway (plus many more weeks to design things, but at least a home for the data and a process from which to build exhibits–that much will be in order).
+
+I suppose exhibit-building will be a "data curation" project as well, but I'm ready to start analyzing rather than curating. The exhibits ought to showcase some ways one could analyze the data, among other things. But I think some scholarly articles are also due at this point. Moreover, that's also why I think this entry will be one of my last updates in this process journal. I need to use the time to draft other stuff, basically, and as far as I can tell, there's not going to be more information I can provide about the formation of the dataset.
+
+We'll see. If I don't come back to add more, though, do not fear. I did not disappear. I only pivoted to analyses and drafting that, hopefully, shows up in the world in some other ways for this project.
